@@ -3,7 +3,10 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css'; // Leaflet core styles
 import 'leaflet-draw/dist/leaflet.draw.css'; // Leaflet Draw styles
 import { Control } from 'leaflet-draw'; // Import the Control class from leaflet-draw
-import { Typography, Box } from '@mui/material'; // Import Material-UI Typography and Box
+import { Box } from '@mui/material'; // Import Material-UI Box for layout
+
+// Import the image
+import logo from '../src/images/imagelogo.png'; // Adjust the path to match your file structure
 
 const LeafletMap = () => {
   useEffect(() => {
@@ -42,33 +45,27 @@ const LeafletMap = () => {
   }, []);
 
   return (
-    <div style={{ textAlign: 'center', backgroundColor: '#f0f0f0', padding: '30px' }}>
-      {/* Box container for heading with background color and padding */}
+    <div style={{ textAlign: 'center', padding: '30px' }}>
+      {/* Box container for logo without background color */}
       <Box 
         sx={{
-          backgroundColor: '#2e3b4e', 
-          color: '#ffffff', 
           padding: '20px', 
-          borderRadius: '8px',
-          maxWidth: '800px',
+          maxWidth: '800px', 
           margin: '0 auto', 
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', 
+          display: 'flex', 
+          justifyContent: 'center'
         }}
       >
-        <Typography
-          variant="h4"
-          sx={{
-            fontFamily: '"Roboto", sans-serif', 
-            fontWeight: 'bold', 
-            fontSize: '36px', 
-            letterSpacing: '1px'
-          }}
-        >
-          Flyover Drone Services
-        </Typography>
+        {/* Image logo */}
+        <img 
+          src={logo} 
+          alt="Flyover Drone Services" 
+          style={{ width: '200px', height: 'auto' }} // You can adjust the size of the logo here
+        />
       </Box>
 
-      {/* Add space between heading and map */}
+      {/* Add space between logo and map */}
       <div style={{ marginTop: '30px' }} />
 
       {/* Leaflet map */}
