@@ -3,6 +3,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css'; // Leaflet core styles
 import 'leaflet-draw/dist/leaflet.draw.css'; // Leaflet Draw styles
 import { Control } from 'leaflet-draw'; // Import the Control class from leaflet-draw
+import { Typography, Box } from '@mui/material'; // Import Material-UI Typography and Box
 
 const LeafletMap = () => {
   useEffect(() => {
@@ -40,7 +41,40 @@ const LeafletMap = () => {
     };
   }, []);
 
-  return <div id="map" style={{ width: '100%', height: '1000px' }} />;
+  return (
+    <div style={{ textAlign: 'center', backgroundColor: '#f0f0f0', padding: '30px' }}>
+      {/* Box container for heading with background color and padding */}
+      <Box 
+        sx={{
+          backgroundColor: '#2e3b4e', 
+          color: '#ffffff', 
+          padding: '20px', 
+          borderRadius: '8px',
+          maxWidth: '800px',
+          margin: '0 auto', 
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+        }}
+      >
+        <Typography
+          variant="h4"
+          sx={{
+            fontFamily: '"Roboto", sans-serif', 
+            fontWeight: 'bold', 
+            fontSize: '36px', 
+            letterSpacing: '1px'
+          }}
+        >
+          Flyover Drone Services
+        </Typography>
+      </Box>
+
+      {/* Add space between heading and map */}
+      <div style={{ marginTop: '30px' }} />
+
+      {/* Leaflet map */}
+      <div id="map" style={{ width: '100%', height: '1000px' }} />
+    </div>
+  );
 };
 
 export default LeafletMap;
