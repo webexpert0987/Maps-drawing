@@ -40,7 +40,7 @@ const LeafletMap = () => {
     };
   }, []);
 
-  return <div id="map" style={{ width: '100%', height: '400px' }} />;
+  return <div id="map" style={{ width: '100%', height: '1000px' }} />;
 };
 
 export default LeafletMap;
